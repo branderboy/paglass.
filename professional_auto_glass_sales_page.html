@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Auto Glass | Windshield Repair in Riverdale, MD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FFCC00', /* The exact bright yellow from your website/truck */
+                            hover: '#E6B800',
+                            black: '#111111',
+                            dark: '#000000',
+                            gray: '#F8F9FA',
+                            border: '#E5E7EB'
+                        }
+                    },
+                    boxShadow: {
+                        'funnel': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                        'solid': '6px 6px 0px 0px rgba(17,17,17,1)',
+                        'solid-hover': '2px 2px 0px 0px rgba(17,17,17,1)',
+                        'solid-yellow': '6px 6px 0px 0px rgba(255,204,0,1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        
+        /* High-impact funnel button animations */
+        .btn-funnel {
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-funnel:active {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px 0px rgba(17,17,17,1) !important;
+        }
+        
+        /* Custom highlight for text */
+        .highlight-yellow {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #FFCC00 60%);
+            display: inline;
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-black antialiased selection:bg-brand-yellow selection:text-black">
+
+    <header class="fixed w-full top-0 z-50 bg-white border-b-4 border-brand-yellow shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-brand-black text-brand-yellow p-2.5 rounded shadow-solid-yellow">
+                        <i class="fa-solid fa-car-burst text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-black text-2xl uppercase tracking-tighter leading-none text-brand-black">Professional<br><span class="text-brand-yellow text-xl stroke-black" style="-webkit-text-stroke: 1px black;">Auto Glass</span></h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <div class="flex flex-col items-end">
+                        <span class="text-sm font-bold text-gray-500 uppercase tracking-wider">Fast Service. Free Quotes.</span>
+                        <a href="tel:301-887-1100" class="text-2xl font-black text-brand-black hover:text-brand-yellow transition-colors">
+                            <i class="fa-solid fa-phone"></i> 301-887-1100
+                        </a>
+                    </div>
+                    <button class="bg-brand-yellow text-brand-black border-2 border-brand-black px-8 py-3 font-black text-lg shadow-solid btn-funnel uppercase tracking-wide" onclick="document.getElementById('quote-section').scrollIntoView()">
+                        Get a Quote
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                     <a href="tel:301-887-1100" class="w-12 h-12 rounded bg-brand-yellow text-brand-black border-2 border-brand-black flex items-center justify-center shadow-solid btn-funnel">
+                        <i class="fa-solid fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-gray border-b-8 border-brand-black">
+        <div class="absolute inset-0 bg-pattern opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Sales Copy Side -->
+                <div class="max-w-2xl">
+                    <!-- Trust Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-brand-black shadow-solid mb-8">
+                        <div class="flex text-brand-yellow text-lg" style="-webkit-text-stroke: 1px black;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-sm font-black text-brand-black uppercase">4.6 Google Rating | 228+ Reviews</span>
+                    </div>
+                    
+                    <h2 class="text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-6 leading-[1.1] text-brand-black">
+                        Cracked Windshield? <br/>
+                        <span class="highlight-yellow">We Fix It Fast.</span>
+                    </h2>
+                    
+                    <p class="text-xl text-gray-700 font-semibold mb-8 leading-relaxed">
+                        Broken car window? Need replacement glass? Get a quote from Professional Auto Glass. We've been serving local drivers since 1995. <strong class="text-brand-black bg-brand-yellow px-1">Lifetime Guarantee included.</strong>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
+                        <div class="flex items-center gap-2 font-bold bg-white px-4 py-2 border-2 border-brand-black rounded-full">
+                            <i class="fa-solid fa-person-walking text-brand-yellow stroke-black" style="-webkit-text-stroke: 1px black;"></i> Walk-ins welcome
+                        </div>
+                        <div class="flex items-center gap-2 font-bold bg-brand-black text-white px-4 py-2 border-2 border-brand-black rounded-full">
+                            <i class="fa-solid fa-van-shuttle text-brand-yellow"></i> Mobile service available
+                        </div>
+                    </div>
+                    
+                    <!-- High Impact Funnel CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="document.getElementById('quote-section').scrollIntoView()" class="w-full sm:w-auto px-10 py-5 bg-brand-yellow text-brand-black border-4 border-brand-black font-black text-xl shadow-solid btn-funnel uppercase tracking-wide flex justify-center items-center gap-3">
+                            Check My Price <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="tel:301-887-1100" class="w-full sm:w-auto px-10 py-5 bg-brand-black text-white border-4 border-brand-black font-black text-xl shadow-solid btn-funnel uppercase tracking-wide flex justify-center items-center gap-3 hover:bg-gray-800">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- High Impact Imagery -->
+                <div class="relative h-[400px] lg:h-[600px] w-full flex items-center justify-center">
+                    <!-- Background Truck -->
+                    <div class="absolute inset-0 z-10 flex items-center justify-center opacity-90 transform translate-x-10 -translate-y-10 lg:translate-x-20">
+                        <img src="hero 45.png" alt="Mobile Auto Glass Service Van" class="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl" onerror="this.src='https://placehold.co/500x300/ffcc00/000000?text=Service+Truck'">
+                    </div>
+                    
+                    <!-- Foreground Techs -->
+                    <div class="absolute bottom-0 z-20 w-full flex justify-center transform lg:-translate-x-10">
+                        <img src="hero image 5_2.png" alt="Auto Glass Technicians holding a windshield" class="w-[110%] max-w-[650px] h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.4)]" onerror="this.src='https://placehold.co/600x400/111111/ffcc00?text=Expert+Technicians'">
+                    </div>
+
+                    <!-- Trust Seal overlay -->
+                    <div class="absolute bottom-10 left-0 z-30 bg-brand-yellow border-4 border-brand-black p-4 shadow-solid transform -rotate-6 animate-pulse">
+                        <p class="font-black text-xl text-center leading-none uppercase">Lifetime<br>Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-brand-black uppercase mb-4 tracking-tight">What Happened to Your Vehicle?</h2>
+                <p class="text-xl text-gray-700 font-semibold border-b-4 border-brand-yellow inline-block pb-2">You don't need to know exactly what service to ask for. Tell us what's wrong.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Funnel Card 1 -->
+                <div class="bg-white border-4 border-brand-black p-8 shadow-solid flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-yellow border-2 border-brand-black flex items-center justify-center shadow-solid mb-6">
+                            <i class="fa-solid fa-car-burst text-3xl text-brand-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase mb-3 leading-tight">My Windshield Is Cracked</h3>
+                        <p class="text-gray-700 font-medium mb-8">Small crack or major windshield damage? We'll help determine whether your windshield can be repaired or needs replacement.</p>
+                    </div>
+                    <button class="w-full bg-brand-black text-white font-black uppercase py-4 border-2 border-brand-black hover:bg-brand-yellow hover:text-brand-black transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                        Get Windshield Quote
+                    </button>
+                </div>
+
+                <!-- Funnel Card 2 -->
+                <div class="bg-white border-4 border-brand-black p-8 shadow-solid flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-yellow border-2 border-brand-black flex items-center justify-center shadow-solid mb-6">
+                            <i class="fa-solid fa-car-side text-3xl text-brand-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase mb-3 leading-tight">My Car Window Is Broken</h3>
+                        <p class="text-gray-700 font-medium mb-8">We replace damaged side glass and other vehicle windows for foreign and domestic vehicles.</p>
+                    </div>
+                    <button class="w-full bg-brand-black text-white font-black uppercase py-4 border-2 border-brand-black hover:bg-brand-yellow hover:text-brand-black transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                        Get A Glass Quote
+                    </button>
+                </div>
+
+                <!-- Funnel Card 3 -->
+                <div class="bg-white border-4 border-brand-black p-8 shadow-solid flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-red-500"><i class="fa-solid fa-triangle-exclamation text-3xl"></i></div>
+                    <div>
+                        <div class="w-16 h-16 bg-brand-black text-brand-yellow border-2 border-brand-black flex items-center justify-center shadow-solid mb-6">
+                            <i class="fa-solid fa-hammer text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase mb-3 leading-tight">Someone Broke Into My Car</h3>
+                        <p class="text-gray-700 font-medium mb-8">A smashed window leaves your vehicle exposed to weather, theft and damage. We provide rapid remediation.</p>
+                    </div>
+                    <button class="w-full bg-red-600 text-white font-black uppercase py-4 border-2 border-brand-black hover:bg-red-700 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                        Get Help Now
+                    </button>
+                </div>
+
+                <!-- Funnel Card 4 -->
+                <div class="bg-white border-4 border-brand-black p-8 shadow-solid flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-brand-yellow border-2 border-brand-black flex items-center justify-center shadow-solid mb-6">
+                            <i class="fa-solid fa-arrows-up-down text-3xl text-brand-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase mb-3 leading-tight">Power Window Stopped</h3>
+                        <p class="text-gray-700 font-medium mb-8">Window stuck down? Won't move? Moving slowly? We diagnose and repair power window problems.</p>
+                    </div>
+                    <button class="w-full bg-brand-black text-white font-black uppercase py-4 border-2 border-brand-black hover:bg-brand-yellow hover:text-brand-black transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                        Request Service
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Insurance Callout -->
+            <div class="mt-12 bg-brand-gray border-4 border-brand-black p-8 shadow-solid flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h3 class="text-2xl font-black uppercase flex items-center gap-3"><i class="fa-solid fa-shield-halved text-brand-yellow" style="-webkit-text-stroke: 1px black;"></i> I Need Help With Insurance</h3>
+                    <p class="text-lg font-medium mt-2">We accept auto glass insurance claims. Tell us what happened and we'll help you understand the next step.</p>
+                </div>
+                <button class="whitespace-nowrap px-8 py-4 bg-white border-4 border-brand-black font-black uppercase btn-funnel shadow-solid hover:bg-brand-yellow" onclick="document.getElementById('quote-section').scrollIntoView()">
+                    Ask About My Claim
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-brand-yellow border-y-8 border-brand-black">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-brand-black uppercase tracking-tight mb-6">
+                Affordable Windshield Repair <u class="decoration-4 underline-offset-4">You Can Count On</u>
+            </h2>
+            <p class="text-2xl font-bold text-brand-black mb-10 max-w-3xl mx-auto">
+                Don't spend your day calling shop after shop. We replace windshields for foreign and domestic cars, trucks, and SUVs. Tell us your vehicle info, and we'll provide a <strong>FIRM QUOTE</strong> before work begins.
+            </p>
+            <button onclick="document.getElementById('quote-section').scrollIntoView()" class="px-12 py-6 bg-brand-black text-white text-2xl font-black uppercase border-4 border-white shadow-solid btn-funnel hover:bg-gray-900 tracking-wider">
+                Get My Windshield Quote NOW
+            </button>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6">Why Drivers Choose Professional Auto Glass</h2>
+                    <p class="text-xl font-bold mb-10 text-gray-700">You have plenty of places to call for auto glass. Here's what you get when you call us.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-brand-yellow rounded-full border-2 border-brand-black flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-xl font-black text-brand-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black uppercase">Serving Since 1995</h3>
+                                <p class="text-lg text-gray-700 font-medium">Repairing and replacing vehicle glass from our Riverdale location for more than 30 years.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-brand-yellow rounded-full border-2 border-brand-black flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-star text-xl font-black text-brand-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black uppercase">4.6 Stars, 228+ Reviews</h3>
+                                <p class="text-lg text-gray-700 font-medium">Hundreds of customers mention our speed, pricing, professionalism and repeat service.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-brand-yellow rounded-full border-2 border-brand-black flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-shield-heart text-xl font-black text-brand-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black uppercase">Lifetime Guarantee</h3>
+                                <p class="text-lg text-gray-700 font-medium">We stand behind the auto glass we install. It comes with a lifetime guarantee.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 shrink-0 bg-brand-yellow rounded-full border-2 border-brand-black flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-file-contract text-xl font-black text-brand-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black uppercase">Firm Quotes</h3>
+                                <p class="text-lg text-gray-700 font-medium">Know what you're agreeing to before the work begins. No hidden charges.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="lg:w-1/2 w-full">
+                    <div class="bg-brand-gray border-4 border-brand-black p-8 shadow-solid">
+                        <div class="text-center mb-8">
+                            <i class="fa-solid fa-stopwatch text-6xl text-brand-yellow mb-4" style="-webkit-text-stroke: 2px black;"></i>
+                            <h3 class="text-3xl font-black uppercase">How Fast Can You Get Fixed?</h3>
+                        </div>
+                        <p class="text-xl text-center font-medium mb-8">
+                            Sometimes you need the problem handled <strong class="bg-brand-yellow px-2">NOW</strong>. Customers report windshield replacements completed in around <strong>40 minutes</strong>.
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <button onclick="document.getElementById('quote-section').scrollIntoView()" class="w-full py-4 bg-brand-yellow border-4 border-brand-black font-black text-xl shadow-solid btn-funnel uppercase">
+                                Check Availability
+                            </button>
+                            <a href="tel:301-887-1100" class="w-full py-4 bg-white border-4 border-brand-black font-black text-xl shadow-solid btn-funnel uppercase flex justify-center items-center gap-2 hover:bg-gray-100">
+                                <i class="fa-solid fa-phone"></i> Call 301-887-1100
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-section" class="py-24 bg-brand-black text-white relative border-y-8 border-brand-yellow">
+        <div class="absolute inset-0 opacity-10 bg-pattern" style="background-image: radial-gradient(#FFCC00 1px, transparent 1px);"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black uppercase text-brand-yellow tracking-tight mb-4 drop-shadow-md">Get a Firm Auto Glass Quote</h2>
+                <p class="text-2xl font-bold">Price shouldn't be a mystery. No hidden charges.</p>
+            </div>
+
+            <div class="bg-white border-4 border-brand-yellow p-8 md:p-12 shadow-[0_0_40px_rgba(255,204,0,0.3)] max-w-4xl mx-auto text-brand-black">
+                <form onsubmit="event.preventDefault(); alert('In a live environment, this would submit your request for a quote!');" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-black uppercase mb-2">Year</label>
+                            <select class="w-full border-4 border-brand-black p-4 bg-brand-gray font-bold outline-none focus:border-brand-yellow focus:bg-white transition-colors">
+                                <option>Select Year</option>
+                                <option>2024</option>
+                                <option>2023</option>
+                                <option>2022</option>
+                                <option>Older...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black uppercase mb-2">Make</label>
+                            <select class="w-full border-4 border-brand-black p-4 bg-brand-gray font-bold outline-none focus:border-brand-yellow focus:bg-white transition-colors">
+                                <option>Select Make</option>
+                                <option>Toyota</option>
+                                <option>Honda</option>
+                                <option>Ford</option>
+                                <option>Other...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black uppercase mb-2">Model</label>
+                            <input type="text" placeholder="e.g. Camry" class="w-full border-4 border-brand-black p-4 bg-brand-gray font-bold outline-none focus:border-brand-yellow focus:bg-white transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-black uppercase mb-2">What glass is damaged?</label>
+                        <select class="w-full border-4 border-brand-black p-4 bg-brand-gray font-bold outline-none focus:border-brand-yellow focus:bg-white transition-colors">
+                            <option>Front Windshield</option>
+                            <option>Driver Side Window</option>
+                            <option>Passenger Side Window</option>
+                            <option>Rear Windshield</option>
+                            <option>Other / Not Sure</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-black uppercase mb-2">What happened? (Optional)</label>
+                        <textarea rows="3" placeholder="Briefly describe the damage..." class="w-full border-4 border-brand-black p-4 bg-brand-gray font-bold outline-none focus:border-brand-yellow focus:bg-white transition-colors resize-none"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-6 bg-brand-yellow hover:bg-yellow-400 text-brand-black border-4 border-brand-black font-black text-2xl uppercase shadow-solid btn-funnel tracking-widest mt-4">
+                        Check My Price NOW
+                    </button>
+                    <p class="text-center font-bold text-gray-500 text-sm mt-4 uppercase"><i class="fa-solid fa-lock"></i> Secure & No Obligation</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                
+                <!-- Services List -->
+                <div>
+                    <h2 class="text-4xl font-black uppercase border-b-8 border-brand-yellow pb-4 mb-8 inline-block">Complete Services</h2>
+                    <ul class="space-y-6">
+                        <li class="bg-white border-2 border-brand-black p-4 flex justify-between items-center group cursor-pointer hover:bg-brand-yellow transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                            <span class="font-black text-xl uppercase">Windshield Crack & Scratch Repair</span>
+                            <i class="fa-solid fa-arrow-right text-2xl group-hover:translate-x-2 transition-transform"></i>
+                        </li>
+                        <li class="bg-white border-2 border-brand-black p-4 flex justify-between items-center group cursor-pointer hover:bg-brand-yellow transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                            <span class="font-black text-xl uppercase">Side Window Replacement</span>
+                            <i class="fa-solid fa-arrow-right text-2xl group-hover:translate-x-2 transition-transform"></i>
+                        </li>
+                        <li class="bg-white border-2 border-brand-black p-4 flex justify-between items-center group cursor-pointer hover:bg-brand-yellow transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                            <span class="font-black text-xl uppercase">Break-In Remediation</span>
+                            <i class="fa-solid fa-arrow-right text-2xl group-hover:translate-x-2 transition-transform"></i>
+                        </li>
+                        <li class="bg-white border-2 border-brand-black p-4 flex justify-between items-center group cursor-pointer hover:bg-brand-yellow transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                            <span class="font-black text-xl uppercase">Fleet Auto Glass Service</span>
+                            <i class="fa-solid fa-arrow-right text-2xl group-hover:translate-x-2 transition-transform"></i>
+                        </li>
+                    </ul>
+
+                    <div class="mt-12 bg-white border-4 border-brand-black p-6 shadow-solid">
+                        <h3 class="text-2xl font-black uppercase mb-2">OEM or Aftermarket Glass?</h3>
+                        <p class="font-medium mb-4">The right glass depends on your vehicle. Tell us your year, make and model and we'll identify the options available.</p>
+                        <button class="font-black uppercase text-brand-yellow bg-brand-black px-6 py-2 hover:bg-gray-800" onclick="document.getElementById('quote-section').scrollIntoView()">Check Options</button>
+                    </div>
+                </div>
+
+                <!-- Location Info -->
+                <div>
+                    <h2 class="text-4xl font-black uppercase border-b-8 border-brand-yellow pb-4 mb-8 inline-block">Come To Us</h2>
+                    
+                    <div class="bg-white border-4 border-brand-black p-8 shadow-solid mb-8 relative">
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-brand-yellow border-4 border-brand-black rounded-full flex justify-center items-center shadow-solid transform rotate-12">
+                            <i class="fa-solid fa-map-pin text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase mb-4">Visit Our Riverdale Shop</h3>
+                        <p class="text-xl font-bold mb-1">Professional Auto Glass</p>
+                        <p class="text-lg font-medium">5601 Kenilworth Ave.</p>
+                        <p class="text-lg font-medium mb-4">Riverdale, MD 20737</p>
+                        <a href="tel:301-887-1100" class="text-3xl font-black hover:text-brand-yellow transition-colors block mb-6">301-887-1100</a>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://maps.google.com/?q=5601+Kenilworth+Ave,+Riverdale,+MD+20737" target="_blank" class="flex-1 text-center bg-brand-black text-white font-black uppercase py-3 border-2 border-brand-black hover:bg-gray-800 transition-colors">
+                                Get Directions
+                            </a>
+                            <span class="flex-1 text-center bg-brand-yellow font-black uppercase py-3 border-2 border-brand-black">
+                                Walk-Ins Welcome
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-black text-white border-4 border-brand-yellow p-8 shadow-solid">
+                        <h3 class="text-2xl font-black uppercase text-brand-yellow mb-2"><i class="fa-solid fa-van-shuttle"></i> We Come To You</h3>
+                        <p class="font-medium mb-6">Mobile auto glass service available throughout DC & Maryland area including Hyattsville, College Park, Lanham, Greenbelt, and Silver Spring.</p>
+                        <button class="w-full bg-brand-yellow text-brand-black font-black uppercase py-4 hover:bg-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                            Check My Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-yellow border-t-8 border-brand-black text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-5xl md:text-6xl font-black uppercase text-brand-black tracking-tight mb-8">Don't Let Broken Auto Glass Become a Bigger Problem</h2>
+            <p class="text-2xl font-bold text-brand-black mb-12">
+                A crack can spread. A broken window leaves you exposed. Tell us what's wrong. We'll tell you what it takes to fix it.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button onclick="document.getElementById('quote-section').scrollIntoView()" class="px-10 py-6 bg-brand-black text-white border-4 border-white font-black text-2xl uppercase shadow-solid btn-funnel hover:bg-gray-900 tracking-wider">
+                    Check My Price
+                </button>
+                <a href="tel:301-887-1100" class="px-10 py-6 bg-white text-brand-black border-4 border-brand-black font-black text-2xl uppercase shadow-solid btn-funnel hover:bg-gray-100 tracking-wider flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-black text-white pt-16 pb-8 border-t-[16px] border-brand-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h2 class="font-black text-2xl uppercase mb-4 text-white">Professional <span class="text-brand-yellow">Auto Glass</span></h2>
+                    <p class="text-gray-400 font-medium mb-6">Serving local drivers since 1995 with expert windshield repair, replacement, and mobile auto glass service.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-yellow font-black uppercase text-xl mb-4">Contact</h3>
+                    <ul class="space-y-3 font-bold text-lg">
+                        <li>5601 Kenilworth Ave.</li>
+                        <li>Riverdale, MD 20737</li>
+                        <li><a href="tel:301-887-1100" class="hover:text-brand-yellow transition-colors text-2xl block mt-2">301-887-1100</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-yellow font-black uppercase text-xl mb-4">Hours</h3>
+                    <ul class="space-y-2 font-bold text-gray-300">
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span>Mon–Sat:</span> <span>9:00 AM – 6:00 PM</span></li>
+                        <li class="flex justify-between pt-2"><span>Sunday:</span> <span>9:00 AM – 4:00 PM</span></li>
+                    </ul>
+                    <div class="mt-6 bg-brand-yellow text-brand-black px-4 py-2 font-black uppercase text-center text-sm inline-block">
+                        Walk-ins welcome
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t-2 border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold text-gray-500 uppercase">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Professional Auto Glass.</p>
+                <div class="flex gap-6">
+                    <button onclick="document.getElementById('quote-section').scrollIntoView()" class="hover:text-brand-yellow transition-colors">Get Quote</button>
+                    <a href="https://maps.google.com/?q=5601+Kenilworth+Ave,+Riverdale,+MD+20737" target="_blank" class="hover:text-brand-yellow transition-colors">Directions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
