@@ -33,7 +33,11 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        @supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; -webkit-tap-highlight-color: transparent; }
+        img { max-width: 100%; }
         
         /* Smooth scrolling animation right for logos */
         @keyframes scrollRight {
@@ -90,11 +94,13 @@
         .btn-franchise {
             transition: all 0.2s ease-in-out;
         }
-        .btn-franchise:hover {
-            transform: translateY(-2px);
-        }
-        .btn-franchise:active {
-            transform: translateY(1px);
+        @media (hover: hover) and (pointer: fine) {
+            .btn-franchise:hover {
+                transform: translateY(-2px);
+            }
+            .btn-franchise:active {
+                transform: translateY(1px);
+            }
         }
 
         /* Pulsating hero call button */
@@ -103,8 +109,16 @@
             50%  { scale: 1.04; box-shadow: 0 0 0 14px rgba(255,255,255,0); }
             100% { scale: 1;    box-shadow: 0 0 0 0 rgba(255,255,255,0); }
         }
+        @keyframes ctaGlow {
+            0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+            50%  { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+        }
         .cta-pulse {
-            animation: ctaPulse 1.8s ease-in-out infinite;
+            animation: ctaGlow 1.8s ease-in-out infinite;
+        }
+        @media (min-width: 640px) {
+            .cta-pulse { animation-name: ctaPulse; }
         }
         .cta-pulse:hover {
             animation-play-state: paused;
@@ -176,7 +190,7 @@
                         Broken car window? Need replacement glass? We've been serving local drivers since 1995.
                     </p>
 
-                    <a href="tel:301-887-1100" class="inline-block px-8 py-4 bg-white border-2 border-white text-brand-black font-black text-lg sm:text-xl rounded btn-franchise cta-pulse uppercase tracking-wide mb-10 hover:bg-gray-100 hover:border-gray-100 transition-colors">
+                    <a href="tel:301-887-1100" class="block w-full sm:inline-block sm:w-auto text-center whitespace-nowrap px-3 sm:px-8 py-4 bg-white border-2 border-white text-brand-black font-black text-sm min-[360px]:text-base sm:text-xl rounded btn-franchise cta-pulse uppercase tracking-normal sm:tracking-wide mb-10 hover:bg-gray-100 hover:border-gray-100 transition-colors">
                         Call Now For Immediate Service
                     </a>
 
@@ -228,7 +242,7 @@
                     <i class="fa-regular fa-star text-4xl"></i>
                     <div>
                         <div class="text-2xl sm:text-3xl font-black leading-none">4.6-Star</div>
-                        <div class="text-xs sm:text-sm font-bold uppercase tracking-tight">Rated 228+ Reviews</div>
+                        <div class="text-xs sm:text-sm font-bold uppercase tracking-tight">Rated 259+ Reviews</div>
                     </div>
                 </div>
 
@@ -572,7 +586,7 @@
                                 <i class="fa-solid fa-star text-xl font-black text-brand-black"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-black uppercase mb-1">4.6 Stars, 228+ Reviews</h3>
+                                <h3 class="text-xl font-black uppercase mb-1">4.6 Stars, 259+ Reviews</h3>
                                 <p class="text-gray-600 font-medium leading-relaxed">Hundreds of customers mention our speed, pricing, professionalism and repeat service.</p>
                             </div>
                         </li>
@@ -696,7 +710,7 @@
                 <div>
                     <h3 class="text-gray-400 font-bold uppercase tracking-wider text-sm mb-4">Hours</h3>
                     <ul class="space-y-2 font-medium text-gray-300">
-                        <li class="flex justify-between border-b border-gray-800 pb-2"><span>Monday–Saturday:</span> <span>9:00 AM – 6:00 PM</span></li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span>Monday–Saturday:</span> <span>8:00 AM – 6:00 PM</span></li>
                         <li class="flex justify-between pt-2"><span>Sunday:</span> <span>9:00 AM – 4:00 PM</span></li>
                     </ul>
                 </div>
