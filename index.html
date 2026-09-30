@@ -300,71 +300,83 @@
                 <p class="text-lg text-gray-600 font-medium">You don't need to know exactly what service to ask for. Tell us what's wrong.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
                 <!-- Funnel Card 1 -->
-                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-premium hover:shadow-premium-hover transition-shadow flex flex-col justify-between">
-                    <div>
-                        <img src="cracked.png" alt="Cracked Windshield" class="w-full h-48 object-cover">
-                        <div class="p-6 pb-2">
-                            <h3 class="text-xl font-black uppercase mb-3">My Windshield Is Cracked</h3>
-                            <p class="text-gray-600 font-medium mb-4 text-sm leading-relaxed">Small crack or major windshield damage? We'll help determine whether your windshield can be repaired or needs replacement.</p>
+                <div class="group relative flex flex-col bg-brand-black rounded-xl overflow-hidden shadow-2xl border-t-4 border-brand-yellow transition-transform duration-300 md:hover:-translate-y-1.5">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="cracked.png" alt="Cracked Windshield" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-black/30 via-45% to-transparent"></div>
+                        <span class="absolute top-4 left-4 inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded shadow-lg"><i class="fa-solid fa-car-burst" aria-hidden="true"></i> Cracked Windshield</span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 pb-4">
+                            <span class="block w-10 h-1 bg-brand-yellow mb-3"></span>
+                            <h3 class="text-2xl font-black uppercase leading-tight text-white drop-shadow-lg">My Windshield Is Cracked</h3>
                         </div>
                     </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-bold uppercase py-3 rounded text-sm hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                    <div class="flex flex-col flex-1 p-6 pt-4">
+                        <p class="text-gray-300 font-medium text-sm leading-relaxed mb-6">Small crack or major windshield damage? We'll help determine whether your windshield can be repaired or needs replacement.</p>
+                        <button class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-black uppercase tracking-wide py-4 rounded text-sm shadow-lg hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
                             <i class="fa-solid fa-circle-check text-xl" aria-hidden="true"></i> Get Windshield Quote
                         </button>
                     </div>
                 </div>
 
                 <!-- Funnel Card 2 -->
-                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-premium hover:shadow-premium-hover transition-shadow flex flex-col justify-between">
-                    <div>
-                        <img src="smshed.png" alt="Broken Side Window" class="w-full h-48 object-cover">
-                        <div class="p-6 pb-2">
-                            <h3 class="text-xl font-black uppercase mb-3">My Car Window Is Broken</h3>
-                            <p class="text-gray-600 font-medium mb-4 text-sm leading-relaxed">We replace damaged side glass and other vehicle windows for foreign and domestic vehicles.</p>
+                <div class="group relative flex flex-col bg-brand-black rounded-xl overflow-hidden shadow-2xl border-t-4 border-brand-yellow transition-transform duration-300 md:hover:-translate-y-1.5">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="smshed.png" alt="Broken Side Window" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-black/30 via-45% to-transparent"></div>
+                        <span class="absolute top-4 left-4 inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded shadow-lg"><i class="fa-solid fa-car-side" aria-hidden="true"></i> Broken Side Window</span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 pb-4">
+                            <span class="block w-10 h-1 bg-brand-yellow mb-3"></span>
+                            <h3 class="text-2xl font-black uppercase leading-tight text-white drop-shadow-lg">My Car Window Is Broken</h3>
                         </div>
                     </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-bold uppercase py-3 rounded text-sm hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                    <div class="flex flex-col flex-1 p-6 pt-4">
+                        <p class="text-gray-300 font-medium text-sm leading-relaxed mb-6">We replace damaged side glass and other vehicle windows for foreign and domestic vehicles.</p>
+                        <button class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-black uppercase tracking-wide py-4 rounded text-sm shadow-lg hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
                             <i class="fa-solid fa-circle-check text-xl" aria-hidden="true"></i> Get A Glass Quote
                         </button>
                     </div>
                 </div>
 
                 <!-- Funnel Card 3 -->
-                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-premium hover:shadow-premium-hover transition-shadow flex flex-col justify-between relative">
-                    <div class="absolute top-4 right-4 text-red-500 bg-red-50 p-2 rounded-full shadow-sm z-10"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                    <div>
-                        <img src="broken in.png" alt="Car Break-In" class="w-full h-48 object-cover">
-                        <div class="p-6 pb-2">
-                            <h3 class="text-xl font-black uppercase mb-3">Someone Broke Into My Car</h3>
-                            <p class="text-gray-600 font-medium mb-4 text-sm leading-relaxed">A smashed window leaves your vehicle exposed to weather, theft and damage. We provide rapid remediation.</p>
+                <div class="group relative flex flex-col bg-brand-black rounded-xl overflow-hidden shadow-2xl border-t-4 border-red-600 transition-transform duration-300 md:hover:-translate-y-1.5">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="broken in.png" alt="Car Break-In" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-black/30 via-45% to-transparent"></div>
+                        <span class="absolute top-4 left-4 inline-flex items-center gap-2 bg-red-600 text-white text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded shadow-lg"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Car Break-In</span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 pb-4">
+                            <span class="block w-10 h-1 bg-red-600 mb-3"></span>
+                            <h3 class="text-2xl font-black uppercase leading-tight text-white drop-shadow-lg">Someone Broke Into My Car</h3>
                         </div>
                     </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-bold uppercase py-3 rounded text-sm hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                    <div class="flex flex-col flex-1 p-6 pt-4">
+                        <p class="text-gray-300 font-medium text-sm leading-relaxed mb-6">A smashed window leaves your vehicle exposed to weather, theft and damage. We provide rapid remediation.</p>
+                        <button class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-black uppercase tracking-wide py-4 rounded text-sm shadow-lg hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
                             <i class="fa-solid fa-circle-check text-xl" aria-hidden="true"></i> Get Help Now
                         </button>
                     </div>
                 </div>
 
                 <!-- Funnel Card 4 -->
-                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-premium hover:shadow-premium-hover transition-shadow flex flex-col justify-between">
-                    <div>
-                        <img src="power window.png" alt="Power Window Repair" class="w-full h-48 object-cover">
-                        <div class="p-6 pb-2">
-                            <h3 class="text-xl font-black uppercase mb-3">Power Window Stopped</h3>
-                            <p class="text-gray-600 font-medium mb-4 text-sm leading-relaxed">Window stuck down? Won't move? Moving slowly? We diagnose and repair power window problems.</p>
+                <div class="group relative flex flex-col bg-brand-black rounded-xl overflow-hidden shadow-2xl border-t-4 border-brand-yellow transition-transform duration-300 md:hover:-translate-y-1.5">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="power window.png" alt="Power Window Repair" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-black/30 via-45% to-transparent"></div>
+                        <span class="absolute top-4 left-4 inline-flex items-center gap-2 bg-brand-yellow text-brand-black text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded shadow-lg"><i class="fa-solid fa-gears" aria-hidden="true"></i> Power Window Repair</span>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 pb-4">
+                            <span class="block w-10 h-1 bg-brand-yellow mb-3"></span>
+                            <h3 class="text-2xl font-black uppercase leading-tight text-white drop-shadow-lg">Power Window Stopped</h3>
                         </div>
                     </div>
-                    <div class="p-6 pt-0 mt-auto">
-                        <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-bold uppercase py-3 rounded text-sm hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
+                    <div class="flex flex-col flex-1 p-6 pt-4">
+                        <p class="text-gray-300 font-medium text-sm leading-relaxed mb-6">Window stuck down? Won't move? Moving slowly? We diagnose and repair power window problems.</p>
+                        <button class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-brand-yellow border-2 border-brand-yellow text-brand-black font-black uppercase tracking-wide py-4 rounded text-sm shadow-lg hover:bg-yellow-400 hover:border-yellow-400 transition-colors" onclick="document.getElementById('quote-section').scrollIntoView()">
                             <i class="fa-solid fa-circle-check text-xl" aria-hidden="true"></i> Request Service
                         </button>
                     </div>
                 </div>
+
             </div>
             
             <!-- Insurance Callout -->
