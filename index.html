@@ -392,7 +392,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-5xl font-black uppercase text-brand-black tracking-tight mb-3">Interactive Damage Assessment Tool</h2>
-                <p class="text-lg text-gray-600 font-medium">Tell us what happened and upload a photo for a fast, firm quote.</p>
+                <p class="text-lg text-gray-600 font-medium">Tell us what happened and get an instant price estimate in under a minute.</p>
             </div>
 
             <div class="bg-white rounded-2xl shadow-premium border border-gray-100 overflow-hidden">
@@ -402,64 +402,69 @@
                     <!-- Steps -->
                     <div class="relative z-10 flex flex-col items-center">
                         <div id="ind-1" class="step-indicator w-10 h-10 rounded-full bg-brand-yellow border-2 border-brand-yellow text-brand-black font-black flex items-center justify-center mb-2 shadow-sm transition-colors">1</div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-black">Select Glass</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-black">Damage</span>
                     </div>
                     <div class="relative z-10 flex flex-col items-center">
                         <div id="ind-2" class="step-indicator w-10 h-10 rounded-full bg-white border-2 border-gray-300 text-gray-400 font-black flex items-center justify-center mb-2 transition-colors">2</div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500 text-center">Upload Photo</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500 text-center">Photo</span>
                     </div>
                     <div class="relative z-10 flex flex-col items-center">
                         <div id="ind-3" class="step-indicator w-10 h-10 rounded-full bg-white border-2 border-gray-300 text-gray-400 font-black flex items-center justify-center mb-2 transition-colors">3</div>
                         <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Details</span>
                     </div>
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div id="ind-4" class="step-indicator w-10 h-10 rounded-full bg-white border-2 border-gray-300 text-gray-400 font-black flex items-center justify-center mb-2 transition-colors">4</div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Price</span>
+                    </div>
                 </div>
 
-                <form id="quote-tool-form" onsubmit="event.preventDefault(); showStep(4);" class="p-6 md:p-12">
+                <form id="quote-tool-form" novalidate onsubmit="event.preventDefault(); handleQuoteSubmit();" class="p-6 md:p-12">
                     <input type="hidden" id="selected_glass" name="selected_glass" value="">
-                    
-                    <!-- STEP 1: Select Glass -->
+
+                    <!-- STEP 1: Damage Type -->
                     <div id="step-1" class="quote-step block">
-                        <h3 class="text-2xl font-black uppercase text-brand-black mb-6 text-center">Where is the damage?</h3>
+                        <h3 class="text-2xl font-black uppercase text-brand-black mb-6 text-center">What needs fixing?</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div onclick="selectGlassOption(this, 'Front Windshield')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
+                            <div onclick="selectGlassOption(this, 'chip')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
+                                <i class="fa-solid fa-burst text-4xl text-brand-black"></i>
+                                <span class="font-bold text-sm uppercase">Chip<br>Repair</span>
+                            </div>
+                            <div onclick="selectGlassOption(this, 'windshield')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
                                 <i class="fa-solid fa-car text-4xl text-brand-black"></i>
-                                <span class="font-bold text-sm uppercase">Front<br>Windshield</span>
+                                <span class="font-bold text-sm uppercase">Windshield<br>Replacement</span>
                             </div>
-                            <div onclick="selectGlassOption(this, 'Rear Window')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
-                                <i class="fa-solid fa-truck-pickup text-4xl text-brand-black"></i>
-                                <span class="font-bold text-sm uppercase">Rear<br>Window</span>
-                            </div>
-                            <div onclick="selectGlassOption(this, 'Door Glass')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
+                            <div onclick="selectGlassOption(this, 'side')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
                                 <i class="fa-solid fa-car-side text-4xl text-brand-black"></i>
-                                <span class="font-bold text-sm uppercase">Door<br>Glass</span>
+                                <span class="font-bold text-sm uppercase">Side<br>Window</span>
                             </div>
-                            <div onclick="selectGlassOption(this, 'Quarter/Vent')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
-                                <i class="fa-solid fa-minimize text-4xl text-brand-black"></i>
-                                <span class="font-bold text-sm uppercase">Quarter /<br>Vent</span>
+                            <div onclick="selectGlassOption(this, 'back')" class="glass-option cursor-pointer border border-gray-200 rounded-xl p-4 text-center hover:border-brand-yellow hover:bg-gray-50 transition-all flex flex-col items-center gap-3">
+                                <i class="fa-solid fa-truck-pickup text-4xl text-brand-black"></i>
+                                <span class="font-bold text-sm uppercase">Back<br>Glass</span>
                             </div>
                         </div>
+                        <p id="err-glass" class="hidden mt-4 text-center text-sm font-bold text-red-600">Please select what needs fixing to continue.</p>
                         <div class="mt-8 flex justify-center">
-                            <button type="button" onclick="if(document.getElementById('selected_glass').value !== '') showStep(2); else alert('Please select a glass type to continue.');" class="px-8 py-3 bg-brand-black text-white font-black text-sm uppercase rounded shadow-sm hover:bg-gray-800 transition-colors">Continue <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                            <button type="button" onclick="goToStep2()" class="px-8 py-3 bg-brand-black text-white font-black text-sm uppercase rounded shadow-sm hover:bg-gray-800 transition-colors">Continue <i class="fa-solid fa-arrow-right ml-2"></i></button>
                         </div>
                     </div>
 
-                    <!-- STEP 2: Upload Photo -->
+                    <!-- STEP 2: Photo (optional, preview only) -->
                     <div id="step-2" class="quote-step hidden">
-                        <h3 class="text-2xl font-black uppercase text-brand-black mb-2 text-center">Upload a Photo (Optional)</h3>
-                        <p class="text-center text-gray-500 font-medium mb-6 text-sm">Seeing the damage helps us give you the most accurate quote.</p>
-                        
+                        <h3 class="text-2xl font-black uppercase text-brand-black mb-2 text-center">Add a Photo (Optional)</h3>
+                        <p class="text-center text-gray-500 font-medium mb-6 text-sm">Preview only. Your photo stays on your device and is not uploaded or sent. Show it to your technician when we call. It does not change your estimate.</p>
+
                         <div class="border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 p-8 text-center hover:border-brand-yellow hover:bg-yellow-50 transition-colors cursor-pointer relative" onclick="document.getElementById('damage-photo').click()">
                             <input type="file" id="damage-photo" accept="image/*" class="hidden" onchange="handleImageUpload(this)">
-                            
+
                             <div id="upload-placeholder">
-                                <i class="fa-solid fa-cloud-arrow-up text-5xl text-gray-400 mb-4"></i>
-                                <p class="font-bold text-brand-black mb-1">Tap or click to upload photo</p>
-                                <p class="text-sm text-gray-500">JPG, PNG format</p>
+                                <i class="fa-solid fa-camera text-5xl text-gray-400 mb-4"></i>
+                                <p class="font-bold text-brand-black mb-1">Tap or click to preview a photo</p>
+                                <p class="text-sm text-gray-500">JPG, PNG format. Not uploaded.</p>
                             </div>
 
                             <div id="preview-container" class="hidden">
                                 <img id="image-preview" src="" alt="Damage Preview" class="max-h-48 mx-auto rounded shadow-sm mb-4">
-                                <p class="font-bold text-brand-yellow">Image Selected. Tap to change.</p>
+                                <p class="font-bold text-brand-black">Photo previewed on this device only. Tap to change.</p>
                             </div>
                         </div>
 
@@ -469,36 +474,85 @@
                         </div>
                     </div>
 
-                    <!-- STEP 3: Details & Contact -->
+                    <!-- STEP 3: Vehicle & Service Details -->
                     <div id="step-3" class="quote-step hidden">
-                        <h3 class="text-2xl font-black uppercase text-brand-black mb-6 text-center">Final Details</h3>
-                        
+                        <h3 class="text-2xl font-black uppercase text-brand-black mb-6 text-center">Vehicle &amp; Service Details</h3>
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Year *</label>
-                                <select required class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                <label for="vehicle-year" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Year *</label>
+                                <select id="vehicle-year" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
                                     <option value="">Select Year</option>
-                                    <option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>Older</option>
                                 </select>
+                                <p id="err-year" class="hidden mt-1 text-xs font-bold text-red-600">Select your vehicle year.</p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Make *</label>
-                                <input type="text" required placeholder="e.g. Honda" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                <label for="vehicle-make" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Make *</label>
+                                <input id="vehicle-make" type="text" placeholder="e.g. Honda" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                <p id="err-make" class="hidden mt-1 text-xs font-bold text-red-600">Enter your vehicle make.</p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Model *</label>
-                                <input type="text" required placeholder="e.g. Accord" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                <label for="vehicle-model" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Vehicle Model</label>
+                                <input id="vehicle-model" type="text" placeholder="e.g. Accord" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your Name *</label>
-                                <input type="text" required placeholder="John Doe" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                        <div class="mb-6">
+                            <span class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Where should we fix it?</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="service" value="mobile" class="peer sr-only" checked>
+                                    <div class="h-full border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">
+                                        <i class="fa-solid fa-truck-fast text-2xl text-brand-black"></i>
+                                        <span><span class="block font-black text-sm uppercase text-brand-black">Free Mobile Service</span><span class="block text-xs text-gray-500 font-medium">We come to your home or work</span></span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="service" value="shop" class="peer sr-only">
+                                    <div class="h-full border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">
+                                        <i class="fa-solid fa-warehouse text-2xl text-brand-black"></i>
+                                        <span><span class="block font-black text-sm uppercase text-brand-black">Shop Visit</span><span class="block text-xs text-gray-500 font-medium">Bring it to our Riverdale shop</span></span>
+                                    </div>
+                                </label>
                             </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Phone Number *</label>
-                                <input type="tel" required placeholder="(301) 555-0123" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                        </div>
+
+                        <div id="adas-group" class="mb-6 hidden">
+                            <span class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Cameras or sensors behind the windshield?</span>
+                            <p class="text-xs text-gray-500 font-medium mb-2">Lane assist, auto braking, and similar systems use a camera near the rearview mirror. These need recalibration after a new windshield.</p>
+                            <div class="grid grid-cols-3 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adas" value="yes" class="peer sr-only">
+                                    <div class="border border-gray-200 rounded-xl p-3 text-center font-black text-sm uppercase text-brand-black hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">Yes</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adas" value="no" class="peer sr-only">
+                                    <div class="border border-gray-200 rounded-xl p-3 text-center font-black text-sm uppercase text-brand-black hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">No</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adas" value="unsure" class="peer sr-only" checked>
+                                    <div class="border border-gray-200 rounded-xl p-3 text-center font-black text-sm uppercase text-brand-black hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">Not Sure</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <span class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">How are you paying?</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="payment" value="cash" class="peer sr-only" checked>
+                                    <div class="h-full border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">
+                                        <i class="fa-solid fa-wallet text-2xl text-brand-black"></i>
+                                        <span class="font-black text-sm uppercase text-brand-black">Out of Pocket</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="payment" value="insurance" class="peer sr-only">
+                                    <div class="h-full border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-brand-yellow transition-all peer-checked:border-brand-yellow peer-checked:bg-yellow-50 peer-checked:ring-2 peer-checked:ring-brand-yellow">
+                                        <i class="fa-solid fa-shield-halved text-2xl text-brand-black"></i>
+                                        <span class="font-black text-sm uppercase text-brand-black">Insurance</span>
+                                    </div>
+                                </label>
                             </div>
                         </div>
 
@@ -510,15 +564,65 @@
                         </div>
                     </div>
 
-                    <!-- STEP 4: Success Message -->
-                    <div id="step-4" class="quote-step hidden text-center py-12">
+                    <!-- STEP 4: Instant Price Result + Lead Capture -->
+                    <div id="step-4" class="quote-step hidden">
+                        <div class="bg-brand-black rounded-xl p-6 md:p-10 text-center mb-8">
+                            <p id="result-label" class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Your Instant Estimate</p>
+                            <p id="result-price" class="text-5xl md:text-7xl font-black text-brand-yellow tracking-tight"></p>
+                            <p id="result-note" class="text-white font-bold mt-3"></p>
+                            <p id="result-vehicle" class="text-sm text-gray-400 font-medium mt-2"></p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h4 class="text-sm font-black uppercase tracking-wider text-brand-black mb-3">Estimate Breakdown</h4>
+                                <ul id="result-breakdown" class="divide-y divide-gray-200 border-t border-b border-gray-200 text-sm"></ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-black uppercase tracking-wider text-brand-black mb-3">What's Included</h4>
+                                <ul class="space-y-3 text-brand-black font-bold text-sm">
+                                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-yellow text-lg"></i> Lifetime guarantee</li>
+                                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-yellow text-lg"></i> OEM quality glass</li>
+                                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-yellow text-lg"></i> $10 off online bookings</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 md:p-8">
+                            <h4 class="text-xl font-black uppercase text-brand-black mb-1">Lock In Your Price</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-6">Estimates are based on typical vehicles. Leave your details for a firm quote on your exact glass.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="lead-name" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your Name *</label>
+                                    <input id="lead-name" type="text" autocomplete="name" placeholder="John Doe" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                    <p id="err-name" class="hidden mt-1 text-xs font-bold text-red-600">Enter your name.</p>
+                                </div>
+                                <div>
+                                    <label for="lead-phone" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Phone Number *</label>
+                                    <input id="lead-phone" type="tel" autocomplete="tel" placeholder="(301) 555-0123" class="w-full border border-gray-300 rounded p-3 text-brand-black bg-white outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all">
+                                    <p id="err-phone" class="hidden mt-1 text-xs font-bold text-red-600">Enter a 10 digit phone number.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                                <button type="button" onclick="showStep(3)" class="px-6 py-3 bg-white border border-gray-300 text-gray-600 font-bold text-sm uppercase rounded hover:bg-gray-50 transition-colors w-full sm:w-auto"><i class="fa-solid fa-arrow-left mr-2"></i> Edit Details</button>
+                                <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-brand-yellow text-brand-black rounded font-black text-lg uppercase shadow-premium hover:bg-yellow-400 btn-franchise tracking-wide">
+                                    Request My Firm Quote
+                                </button>
+                            </div>
+                            <p class="text-center sm:text-right mt-4 text-sm font-bold text-gray-600">Or call <a href="tel:301-887-1100" class="text-brand-black font-black hover:text-yellow-600 transition-colors"><i class="fa-solid fa-phone text-brand-yellow mr-1"></i>301-887-1100</a></p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5: Success Message -->
+                    <div id="step-5" class="quote-step hidden text-center py-12">
                         <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fa-solid fa-check text-4xl"></i>
                         </div>
-                        <h3 class="text-3xl font-black uppercase text-brand-black mb-4">Request Received!</h3>
-                        <p class="text-gray-600 font-medium text-lg mb-8 max-w-md mx-auto">We're reviewing your vehicle details and damage photo. A technician will call you shortly at the number provided with your firm quote.</p>
+                        <h3 class="text-3xl font-black uppercase text-brand-black mb-4">Your Quote Is Ready!</h3>
+                        <p id="success-message" class="text-gray-600 font-medium text-lg mb-4 max-w-md mx-auto"></p>
+                        <p class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-8">Quote reference <span id="success-ref" class="text-brand-black font-black"></span></p>
                         <a href="tel:301-887-1100" class="inline-block px-8 py-4 bg-brand-black text-white font-black text-lg rounded shadow-premium hover:bg-gray-800 transition-colors uppercase tracking-wide">
-                            <i class="fa-solid fa-phone text-brand-yellow mr-2"></i> Call Us Instead
+                            <i class="fa-solid fa-phone text-brand-yellow mr-2"></i> Call 301-887-1100
                         </a>
                     </div>
                 </form>
@@ -526,12 +630,51 @@
         </div>
 
         <script>
+            /* =====================================================================
+               PRICING CONFIG: edit these numbers to change the instant quote.
+               All amounts are US dollars. min/max are the low and high end
+               of the range shown to the customer.
+               ===================================================================== */
+            const PRICING = {
+                chip:       { label: 'Chip Repair',             min: 59,  max: 89  },
+                windshield: { label: 'Windshield Replacement',  min: 199, max: 329 },
+                side:       { label: 'Side Window',             min: 179, max: 299 },
+                back:       { label: 'Back Glass',              min: 249, max: 399 },
+
+                // Added to windshield replacement when ADAS = "yes",
+                // or ADAS = "not sure" and the vehicle year is >= adasUnsureFromYear.
+                adasRecalibration: { label: 'ADAS Camera Recalibration', min: 150, max: 220 },
+                adasUnsureFromYear: 2016,
+
+                mobileService: 0, // 0 = free mobile service
+                shopVisit: 0,
+
+                insurance: {
+                    displayPrice: 0,
+                    message: 'We file the claim with your insurer.'
+                }
+            };
+            /* ===================================================================== */
+
+            const PHONE = '301-887-1100';
+            let currentStep = 1;
+            let lastQuote = null;
+
+            // Vehicle year options: next model year back to 1990
+            (function populateYears() {
+                const select = document.getElementById('vehicle-year');
+                const newest = new Date().getFullYear() + 1;
+                for (let y = newest; y >= 1990; y--) select.add(new Option(String(y), String(y)));
+                select.add(new Option('1989 or older', '1989'));
+            })();
+
             function showStep(step) {
+                currentStep = step;
                 document.querySelectorAll('.quote-step').forEach(el => el.classList.add('hidden'));
                 document.getElementById('step-' + step).classList.remove('hidden');
 
                 // Update Stepper
-                for(let i = 1; i <= 3; i++) {
+                for(let i = 1; i <= 4; i++) {
                     let ind = document.getElementById('ind-' + i);
                     if(ind) {
                         if (i <= step) {
@@ -543,6 +686,8 @@
                         }
                     }
                 }
+
+                if (step >= 3) document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
             }
 
             function selectGlassOption(element, value) {
@@ -551,7 +696,15 @@
                 });
                 element.classList.add('border-brand-yellow', 'bg-yellow-50', 'ring-2', 'ring-brand-yellow');
                 document.getElementById('selected_glass').value = value;
+                document.getElementById('err-glass').classList.add('hidden');
+                // ADAS question only applies to windshield replacement
+                document.getElementById('adas-group').classList.toggle('hidden', value !== 'windshield');
                 setTimeout(() => showStep(2), 300); // Small delay for UX
+            }
+
+            function goToStep2() {
+                if (document.getElementById('selected_glass').value !== '') showStep(2);
+                else document.getElementById('err-glass').classList.remove('hidden');
             }
 
             function handleImageUpload(input) {
@@ -568,6 +721,117 @@
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
+            }
+
+            function radioValue(name) {
+                const el = document.querySelector('input[name="' + name + '"]:checked');
+                return el ? el.value : '';
+            }
+
+            function setError(id, show) {
+                document.getElementById(id).classList.toggle('hidden', !show);
+                return show;
+            }
+
+            function money(n) { return '$' + n.toLocaleString('en-US'); }
+
+            function handleQuoteSubmit() {
+                if (currentStep === 3) showResult();
+                else if (currentStep === 4) submitLead();
+            }
+
+            function calculateQuote(q) {
+                const base = PRICING[q.type];
+                const lines = [{ label: base.label, min: base.min, max: base.max }];
+                let min = base.min, max = base.max;
+
+                if (q.type === 'windshield') {
+                    const needsAdas = q.adas === 'yes' || (q.adas === 'unsure' && q.year >= PRICING.adasUnsureFromYear);
+                    if (needsAdas) {
+                        lines.push({ label: PRICING.adasRecalibration.label, min: PRICING.adasRecalibration.min, max: PRICING.adasRecalibration.max });
+                        min += PRICING.adasRecalibration.min;
+                        max += PRICING.adasRecalibration.max;
+                    }
+                }
+
+                const serviceFee = q.service === 'mobile' ? PRICING.mobileService : PRICING.shopVisit;
+                lines.push({ label: q.service === 'mobile' ? 'Mobile Service' : 'Shop Visit', min: serviceFee, max: serviceFee });
+                min += serviceFee;
+                max += serviceFee;
+
+                return { min, max, lines };
+            }
+
+            function showResult() {
+                const q = {
+                    type: document.getElementById('selected_glass').value,
+                    year: parseInt(document.getElementById('vehicle-year').value, 10),
+                    make: document.getElementById('vehicle-make').value.trim(),
+                    model: document.getElementById('vehicle-model').value.trim(),
+                    service: radioValue('service') || 'mobile',
+                    adas: radioValue('adas') || 'unsure',
+                    payment: radioValue('payment') || 'cash'
+                };
+
+                if (!q.type) { showStep(1); setError('err-glass', true); return; }
+                const badYear = setError('err-year', !q.year);
+                const badMake = setError('err-make', !q.make);
+                if (badYear || badMake) return;
+
+                const result = calculateQuote(q);
+                lastQuote = { ...q, ...result };
+
+                const priceEl = document.getElementById('result-price');
+                const noteEl = document.getElementById('result-note');
+                if (q.payment === 'insurance') {
+                    priceEl.textContent = money(PRICING.insurance.displayPrice);
+                    noteEl.textContent = PRICING.insurance.message;
+                } else {
+                    priceEl.textContent = money(result.min) + ' – ' + money(result.max);
+                    noteEl.textContent = q.service === 'mobile' ? 'Free mobile service included.' : 'Shop visit at our Riverdale location.';
+                }
+                document.getElementById('result-vehicle').textContent =
+                    PRICING[q.type].label + ' · ' + [q.year === 1989 ? '1989 or older' : q.year, q.make, q.model].filter(Boolean).join(' ');
+
+                const list = document.getElementById('result-breakdown');
+                list.innerHTML = '';
+                result.lines.forEach(line => {
+                    const li = document.createElement('li');
+                    li.className = 'flex justify-between py-3 font-medium text-gray-700';
+                    const name = document.createElement('span');
+                    name.textContent = line.label;
+                    const amt = document.createElement('span');
+                    amt.className = 'font-black text-brand-black';
+                    amt.textContent = line.max === 0 ? 'FREE' : money(line.min) + ' – ' + money(line.max);
+                    li.append(name, amt);
+                    list.appendChild(li);
+                });
+                if (q.payment === 'insurance') {
+                    const li = document.createElement('li');
+                    li.className = 'flex justify-between py-3 font-medium text-gray-700';
+                    li.innerHTML = '<span>Insurance claim</span><span class="font-black text-brand-black">We file it</span>';
+                    list.appendChild(li);
+                }
+
+                showStep(4);
+            }
+
+            function submitLead() {
+                const name = document.getElementById('lead-name').value.trim();
+                const phoneDigits = document.getElementById('lead-phone').value.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
+                const badName = setError('err-name', !name);
+                const badPhone = setError('err-phone', phoneDigits.length !== 10);
+                if (badName || badPhone || !lastQuote) return;
+
+                const ref = 'PAG-' + Date.now().toString(36).toUpperCase().slice(-6);
+                lastQuote.lead = { name, phone: phoneDigits, ref };
+                // No backend: this page does not transmit the lead anywhere.
+                // To capture leads, send `lastQuote` to a form service here.
+
+                document.getElementById('success-message').textContent =
+                    'Thanks, ' + name + '. To confirm your firm quote and book, call us at ' + PHONE + ' and give your quote reference.';
+                document.getElementById('success-ref').textContent = ref;
+                showStep(5);
             }
         </script>
     </section>
